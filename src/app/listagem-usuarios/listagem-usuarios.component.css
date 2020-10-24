@@ -1,0 +1,20 @@
+.card{
+    display: flex;
+    padding-left: 0;
+    padding-right: 0;
+    justify-content: center;
+}
+
+.cards-conteudo{
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.card-body strong{
+    color: #626262;
+}
+
+agm-map {
+    height: 300px;
+   }
