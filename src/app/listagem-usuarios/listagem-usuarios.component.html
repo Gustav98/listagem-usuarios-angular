@@ -1,21 +1,36 @@
 <div class="row cards-conteudo">
-    <div class="col-md-6 col-xs-12 card border-light" *ngFor="let usuario of usuarios">
-        <div class="info-usuario bg-dark text-white card-header">
-            <h2>{{ usuario.username }}</h2>
-            <small><strong>E-mail: </strong>{{ usuario.email }}</small><br>
+    <div class="col-md-6 col-xs-12 card border-light" *ngFor="let user of users">
+        <div class="bg-dark text-white card-header">
+            <h2>{{ user.username }}</h2>
+            <small><strong>E-mail: </strong>{{ user.email }}</small><br>
         </div>
         <div class="card-body text-dark">
-            <div class="col-md-6 detalhes card-text">
-                <small><strong>Nome: </strong>{{ usuario.name }}</small><br>
-                <small><strong>Telefone: </strong>{{ usuario.phone }}</small><br>
-                <small><strong>Website: </strong>{{ usuario.website }}</small><br>
-                <small><strong>Nome da Empresa: </strong>{{ usuario.company.name }}</small><br>
+            <div class="row">
+                <div class="col-md-6 card-text">
+                    <small><strong>Nome: </strong>{{ user.name }}</small><br>
+                    <small><strong>Telefone: </strong>{{ user.phone }}</small><br>
+                    <small><strong>Website: </strong>{{ user.website }}</small><br>
+                    <small><strong>Nome da Empresa: </strong>{{ user.company.name }}</small><br>
+
+                    <h4>Endereço</h4>
+                    <small><strong>Rua: </strong>{{ user.address.street }}</small><br>
+                    <small><strong>Apartamento: </strong>{{ user.address.suite }}</small><br>
+                    <small><strong>Cidade: </strong>{{ user.address.city }}</small><br>
+                    <small><strong>CEP: </strong>{{ user.address.zipcode }}</small><br>
+                </div>
+                <div class="col-md-6">
+                    <agm-map [latitude]="lat" [zoom]="zoom" [longitude]="lng">
+                      <agm-marker  [latitude]="lat" [longitude]="lng">
+                          <agm-info-window>
+                            <small><strong>Rua: </strong>{{ user.address.street }}</small><br>
+                            <small><strong>Apartamento: </strong>{{ user.address.suite }}</small><br>
+                            <small><strong>Cidade: </strong>{{ user.address.city }}</small><br>
+                            <small><strong>CEP: </strong>{{ user.address.zipcode }}</small><br>
+                          </agm-info-window>
+                      </agm-marker>
+                    </agm-map>
+                </div>
             </div>
-            <!-- <div class="col-md-6">
-                <agm-map [latitude]="usuario.address.geo.lat" [zoom]="zoom" [longitude]="usuario.address.geo.lng">
-                  <agm-marker  [latitude]="usuario.address.geo.lat" [longitude]="usuario.address.geo.lng"></agm-marker>
-                </agm-map>
-            </div> -->
         </div>
     </div>
 </div>
