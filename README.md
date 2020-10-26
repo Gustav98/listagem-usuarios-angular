@@ -1,5 +1,9 @@
 # ListarUsuariosAngular
 
+Nesta aplicação, estou fazendo uma listagem de cards com usuários e pegando seus dados de endereço para mostrar sua localização no mapa.
+Foram utilizados Angular 9 e AGM (Angular Google Maps). componentes angular que fazem a integração entre a api do google maps e o angular,
+para fazer a exibição dos mapas.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.0-next.4.
 
 ## Development server
